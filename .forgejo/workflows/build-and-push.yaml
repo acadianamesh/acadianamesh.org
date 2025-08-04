@@ -1,0 +1,63 @@
+name: build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: docker
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Docker CLI installation
+        run: |
+          apt-get update
+          apt-get install -y ca-certificates curl
+          curl -fsSL https://get.docker.com -o get-docker.sh
+          sh get-docker.sh
+
+      - name: Login to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: code.salce.do
+          username: ${{ vars.REGISTRY_USER }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: |
+            code.salce.do/salcedo/acadianamesh
+          flavor: |
+            latest=true
+          tags: |
+            type=sha,prefix=
+        env:
+          DOCKER_METADATA_SHORT_SHA_LENGTH: 10
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      # - name: Checkout the acadianamesh-chart repo
+      #   uses: actions/checkout@v4
+      #   with:
+      #     repository: https://code.salce.do/salcedo/acadianamesh-chart.git
+      #     token: ${{ secrets.REGISTRY_PASSWORD }}
+      #     path: acadianamesh-chart
+
+      # - name: Install UpdateCLI
+      #   run: |
+      #     curl -fsSL https://github.com/updatecli/updatecli/releases/latest/download/updatecli_Linux_x86_64.tar.gz | tar -xz
+      #     sudo mv updatecli /usr/local/bin/
+      #     updatecli version
+
+      # - name: Update Helm Chart with UpdateCLI
+      #   run: |
+      #     updatecli apply --config updatecli.yaml
+      #   env:
+      #     UPDATECLI_GITHUB_TOKEN: ${{ secrets.REGISTRY_PASSWORD }}

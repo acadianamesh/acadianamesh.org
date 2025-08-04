@@ -4,8 +4,6 @@ date = 2024-01-01T00:00:00-06:00
 draft = false
 +++
 
-# Acadiana Mesh Network Nodes
-
 Explore the current mesh network coverage across Acadiana and Southern Louisiana. Our growing network of Meshtastic nodes provides reliable communication infrastructure for our communities.
 
 ## Network Status
@@ -22,12 +20,14 @@ The Acadiana mesh network is actively expanding with nodes deployed across multi
 ## Coverage Areas
 
 ### Lafayette Parish
+
 - Downtown Lafayette
 - UL Campus area
 - Northside
 - River Ranch
 
 ### Surrounding Parishes
+
 - Acadia Parish: Crowley, Rayne
 - Vermilion Parish: Abbeville, Kaplan
 - St. Martin Parish: St. Martinville, Breaux Bridge
@@ -50,4 +50,3 @@ Want to contribute to the network? Here's how to get your node listed:
 - **Message Reliability**: High with mesh redundancy
 
 Join us in building a more connected and resilient Acadiana!
-

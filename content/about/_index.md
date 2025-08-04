@@ -4,8 +4,6 @@ date = 2024-01-01T00:00:00-06:00
 draft = false
 +++
 
-# About Acadiana Mesh
-
 Acadiana Mesh is a community-driven initiative focused on building resilient mesh networks throughout Acadiana and Southern Louisiana using Meshtastic technology.
 
 ## Our Mission
@@ -57,4 +55,3 @@ Ready to get started or have questions? We'd love to hear from you:
 - **Email**: Contact us directly for more information
 
 Together, we're building a more connected and resilient Acadiana.
-

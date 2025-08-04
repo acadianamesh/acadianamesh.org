@@ -13,12 +13,14 @@ Welcome to the world of mesh networking! This guide will help you get your first
 ## What You'll Need
 
 ### Hardware
+
 - **Meshtastic-compatible device** (we recommend starting with a Heltec LoRa 32 V3 or T-Beam)
 - **Antenna** (915MHz for North America)
 - **USB cable** for initial setup
 - **Battery** (optional, for portable operation)
 
 ### Software
+
 - **Meshtastic mobile app** (iOS/Android) or web client
 - **Computer** for firmware flashing (if needed)
 
@@ -27,6 +29,7 @@ Welcome to the world of mesh networking! This guide will help you get your first
 For beginners in the Acadiana area, we recommend:
 
 1. **Heltec LoRa 32 V3** (~$25)
+
    - Great for getting started
    - Built-in OLED display
    - Easy to program and configure
@@ -39,6 +42,7 @@ For beginners in the Acadiana area, we recommend:
 ## Step 2: Install the Meshtastic App
 
 Download the official Meshtastic app:
+
 - **Android**: Google Play Store
 - **iOS**: Apple App Store
 - **Web**: [client.meshtastic.org](https://client.meshtastic.org)
@@ -78,11 +82,13 @@ To connect with local mesh users:
 ## Next Steps
 
 ### Optimize Your Setup
+
 - **Improve your antenna**: Consider upgrading to a better antenna for increased range
 - **Find a good location**: Higher elevation = better coverage
 - **Solar power**: Make your node self-sufficient
 
 ### Get Involved
+
 - **Join our Discord**: Connect with local mesh enthusiasts
 - **Attend meetups**: Learn from experienced operators
 - **Help expand coverage**: Set up additional nodes
@@ -90,16 +96,19 @@ To connect with local mesh users:
 ## Troubleshooting
 
 ### Can't connect to device?
+
 - Check USB cable and drivers
 - Try different USB ports
 - Restart the Meshtastic app
 
 ### No messages received?
+
 - Verify your region setting (US for Acadiana)
 - Check antenna connection
 - Move to higher ground or outdoors
 
 ### Battery drains quickly?
+
 - Reduce screen timeout
 - Lower GPS update frequency
 - Use power-saving mode
@@ -114,9 +123,9 @@ To connect with local mesh users:
 ## Get Help
 
 Need assistance? We're here to help:
-- **Discord**: #acadiana-mesh channel
-- **GitHub**: Open an issue with your question
+
+- **Discord**:
+- **GitHub**:
 - **Local meetups**: Get hands-on help from community members
 
 Welcome to the mesh! 📡
-

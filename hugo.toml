@@ -9,8 +9,9 @@ enableGitInfo = true
 enableEmoji = true
 
 # Pagination
-paginate = 10
-paginatePath = 'page'
+[pagination]
+pagerSize = 10
+path = 'page'
 
 # Menu configuration
 [menu]
@@ -39,12 +40,12 @@ paginatePath = 'page'
 [params]
   description = 'Connecting Acadiana and Southern Louisiana through mesh networking and Meshtastic technology'
   author = 'Acadiana Mesh'
-  
+
   # Social links
   [params.social]
     github = 'https://github.com/acadianamesh'
     discord = 'https://discord.gg/meshtastic'
-    
+
 # Markup configuration
 [markup]
   [markup.goldmark]
@@ -58,7 +59,7 @@ paginatePath = 'page'
 
 # Output formats
 [outputs]
-  home = ['HTML', 'RSS', 'JSON']
+  home = ['HTML', 'RSS']
   page = ['HTML']
   section = ['HTML', 'RSS']
 

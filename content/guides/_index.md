@@ -4,8 +4,6 @@ date = 2024-01-01T00:00:00-06:00
 draft = false
 +++
 
-# Meshtastic Guides
-
 Learn how to set up, configure, and optimize your Meshtastic devices for the Acadiana mesh network.
 
 ## Getting Started
@@ -27,4 +25,3 @@ Advanced topics for improving range, reliability, and network performance.
 ## Troubleshooting
 
 Common issues and solutions to keep your mesh nodes running smoothly.
-
