@@ -1,0 +1,95 @@
+{{ define "main" }}
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1 class="hero-title">{{ .Site.Title }}</h1>
+            <p class="hero-subtitle">Connecting Acadiana and Southern Louisiana through mesh networking</p>
+            <p class="hero-description">
+                Join our community of mesh networking enthusiasts using Meshtastic technology to build resilient, 
+                decentralized communication networks across the region.
+            </p>
+            <div class="hero-actions">
+                <a href="/guides/" class="btn btn-primary">Get Started</a>
+                <a href="/about/" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <h2 class="section-title">Why Mesh Networking?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">📡</div>
+                <h3>Resilient Communication</h3>
+                <p>Stay connected even when traditional infrastructure fails. Mesh networks route around damage automatically.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Private & Secure</h3>
+                <p>End-to-end encrypted messaging without relying on corporate servers or internet infrastructure.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌐</div>
+                <h3>Community Owned</h3>
+                <p>Built and maintained by the community, for the community. No monthly fees or corporate control.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Low Power</h3>
+                <p>Meshtastic devices can run for weeks on a single battery charge, perfect for emergency situations.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ if .Site.Data.nodes }}
+<section class="nodes-preview">
+    <div class="container">
+        <h2 class="section-title">Active Nodes</h2>
+        <p class="section-subtitle">Current mesh network coverage in our area</p>
+        <div class="nodes-grid">
+            {{ range first 6 .Site.Data.nodes }}
+            <div class="node-card">
+                <h4>{{ .name }}</h4>
+                <p class="node-location">{{ .location }}</p>
+                <span class="node-status {{ if .active }}active{{ else }}inactive{{ end }}">
+                    {{ if .active }}Online{{ else }}Offline{{ end }}
+                </span>
+            </div>
+            {{ end }}
+        </div>
+        <div class="text-center">
+            <a href="/nodes/" class="btn btn-outline">View All Nodes</a>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ if .Site.RegularPages }}
+<section class="recent-posts">
+    <div class="container">
+        <h2 class="section-title">Latest Updates</h2>
+        <div class="posts-grid">
+            {{ range first 3 (where .Site.RegularPages "Type" "in" (slice "post" "guides")) }}
+            <article class="post-card">
+                <h3 class="post-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h3>
+                <p class="post-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ if .Params.categories }}
+                    <span class="post-category">{{ index .Params.categories 0 }}</span>
+                    {{ end }}
+                </p>
+                <p class="post-summary">{{ .Summary }}</p>
+                <a href="{{ .RelPermalink }}" class="read-more">Read more →</a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+{{ end }}
+

@@ -1,0 +1,43 @@
+<header class="header">
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="{{ .Site.BaseURL }}" class="nav-logo">
+                    {{ .Site.Title }}
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="{{ .Site.BaseURL }}" class="nav-link {{ if .IsHome }}active{{ end }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about/" class="nav-link {{ if eq .Section "about" }}active{{ end }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/guides/" class="nav-link {{ if eq .Section "guides" }}active{{ end }}">Guides</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/nodes/" class="nav-link {{ if eq .Section "nodes" }}active{{ end }}">Nodes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/contact/" class="nav-link {{ if eq .Section "contact" }}active{{ end }}">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                            <span class="theme-icon">🌙</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+</header>
+

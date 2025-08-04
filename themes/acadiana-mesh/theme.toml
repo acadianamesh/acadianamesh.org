@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+
+name = "Acadiana Mesh"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+description = "A minimal, responsive theme for Acadiana Mesh with light/dark mode support"
+homepage = "http://example.com/"
+tags = ["responsive", "minimal", "dark-mode", "mesh", "meshtastic"]
+features = ["responsive", "dark-mode", "burger-menu"]
+min_version = "0.41.0"
+
+[author]
+  name = "Acadiana Mesh"
+  homepage = "https://www.acadianamesh.org/"
+

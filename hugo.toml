@@ -1,0 +1,68 @@
+baseURL = 'https://www.acadianamesh.org/'
+languageCode = 'en-us'
+title = 'Acadiana Mesh'
+theme = 'acadiana-mesh'
+
+# Site configuration
+enableRobotsTXT = true
+enableGitInfo = true
+enableEmoji = true
+
+# Pagination
+paginate = 10
+paginatePath = 'page'
+
+# Menu configuration
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 20
+  [[menu.main]]
+    name = 'Guides'
+    url = '/guides/'
+    weight = 30
+  [[menu.main]]
+    name = 'Nodes'
+    url = '/nodes/'
+    weight = 40
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 50
+
+# Site parameters
+[params]
+  description = 'Connecting Acadiana and Southern Louisiana through mesh networking and Meshtastic technology'
+  author = 'Acadiana Mesh'
+  
+  # Social links
+  [params.social]
+    github = 'https://github.com/acadianamesh'
+    discord = 'https://discord.gg/meshtastic'
+    
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = 'github'
+    lineNos = true
+    codeFences = true
+    guessSyntax = true
+
+# Output formats
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+  page = ['HTML']
+  section = ['HTML', 'RSS']
+
+# Taxonomies
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'

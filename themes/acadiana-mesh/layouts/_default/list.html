@@ -1,0 +1,47 @@
+{{ define "main" }}
+<div class="list">
+    <div class="container">
+        <header class="list-header">
+            <h1 class="list-title">{{ .Title }}</h1>
+            {{ if .Content }}
+            <div class="list-description">
+                {{ .Content }}
+            </div>
+            {{ end }}
+        </header>
+        
+        {{ if .Pages }}
+        <div class="list-content">
+            {{ range .Pages }}
+            <article class="list-item">
+                <h2 class="list-item-title">
+                    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+                <div class="list-item-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                    {{ if .Params.categories }}
+                    <div class="list-item-categories">
+                        {{ range .Params.categories }}
+                        <span class="category">{{ . }}</span>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                {{ if .Summary }}
+                <div class="list-item-summary">
+                    {{ .Summary }}
+                </div>
+                {{ end }}
+                <a href="{{ .RelPermalink }}" class="list-item-link">Read more →</a>
+            </article>
+            {{ end }}
+        </div>
+        {{ else }}
+        <div class="list-empty">
+            <p>No content found in this section.</p>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
+
