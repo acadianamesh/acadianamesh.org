@@ -5,7 +5,7 @@ theme = 'acadiana-mesh'
 
 # Site configuration
 enableRobotsTXT = true
-enableGitInfo = true
+enableGitInfo = false
 enableEmoji = true
 
 # Pagination
