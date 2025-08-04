@@ -38,7 +38,7 @@ path = 'page'
 
 # Site parameters
 [params]
-  description = 'Connecting Acadiana and Southern Louisiana through mesh networking and Meshtastic technology'
+  description = 'Connecting Acadiana and Southern Louisiana through mesh networking'
   author = 'Acadiana Mesh'
 
   # Social links

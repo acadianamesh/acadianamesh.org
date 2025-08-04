@@ -6,8 +6,6 @@ categories = ["Getting Started"]
 tags = ["meshtastic", "beginner", "setup"]
 +++
 
-# Getting Started with Meshtastic
-
 Welcome to the world of mesh networking! This guide will help you get your first Meshtastic device up and running on the Acadiana mesh network.
 
 ## What You'll Need

@@ -4,7 +4,7 @@ A Hugo-powered website for the Acadiana Mesh community, dedicated to mesh networ
 
 ## 🌐 About
 
-Acadiana Mesh is a community-driven initiative focused on building resilient mesh networks throughout Acadiana and Southern Louisiana using Meshtastic technology. This website serves as the central hub for information, guides, node status, and community coordination.
+Acadiana Mesh is a community-driven initiative focused on building resilient mesh networks throughout Acadiana and Southern Louisiana. This website serves as the central hub for information, guides, node status, and community coordination.
 
 ## ✨ Features
 
