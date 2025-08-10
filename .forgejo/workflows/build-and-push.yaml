@@ -1,7 +1,4 @@
-name: build
-
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
   build:
@@ -9,6 +6,9 @@ jobs:
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Docker CLI installation
         run: |
@@ -29,13 +29,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            code.salce.do/salcedo/acadianamesh
+            code.salce.do/acadianamesh/acadianamesh.org
           flavor: |
             latest=true
           tags: |
-            type=sha,prefix=
-        env:
-          DOCKER_METADATA_SHORT_SHA_LENGTH: 10
+            type=sha
 
       - name: Build and push
         uses: docker/build-push-action@v6
@@ -43,3 +41,19 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Install Updatecli in the runner
+        uses: https://github.com/updatecli/updatecli-action@v2
+
+      - name: Update helm chart versions with Updatecli
+        if: github.event_name != 'pull_request'
+        env:
+          REGISTRY_USER: ${{ vars.REGISTRY_USER }}
+          REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
+        run: |
+          # Extract the SHA tag from the docker metadata
+          export NEW_APP_VERSION=$(echo "${{ steps.meta.outputs.tags }}" | grep -o 'sha-[a-f0-9]\{7\}' | head -1)
+          echo "New app version: $NEW_APP_VERSION"
+
+          # Run updatecli to update helm chart versions and create PR
+          updatecli apply --config updatecli.yaml
